@@ -1,3 +1,8 @@
 source "https://rubygems.org"
 
-gem "minimal-mistakes-jekyll", group: :jekyll_plugins
+gem "github-pages"
+
+group :jekyll_plugins do
+  gem "jekyll-remote-theme"
+  gem "jekyll-include-cache"
+end

@@ -1,12 +1,15 @@
 name: automatic analysis
 
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "sunrise"
 logo: "/assets/images/logo.png"
 title: automatic analysis
 title_separator: "|"
 markdown: kramdown
 include: ["_pages"]
+plugins: 
+  - jekyll-remote-theme
+  - jekyll-include-cache
 
 defaults:
   # _posts
