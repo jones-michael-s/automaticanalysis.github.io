@@ -1,0 +1,9 @@
+main:
+- title: Home
+  url: /
+- title: Concepts
+  url: /concepts/
+- title: News
+  url: /news/
+- title: About
+  url: /about/

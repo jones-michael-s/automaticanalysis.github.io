@@ -1,4 +1,20 @@
 name: automatic analysis
 
-theme: jekyll-theme-slate
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "sunrise"
+logo: "/assets/images/logo.png"
+title: automatic analysis
+title_separator: "|"
 markdown: kramdown
+include: ["_pages"]
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      classes: wide
+
+repository: "automaticanalysis/automaticanalysis"
