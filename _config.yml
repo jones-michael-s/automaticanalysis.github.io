@@ -4,6 +4,7 @@ remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "sunrise"
 logo: "/assets/images/logo.png"
 title: automatic analysis
+subtitle: "a Matlab pipeline"
 title_separator: "|"
 markdown: kramdown
 include: ["_pages"]
@@ -12,12 +13,12 @@ plugins:
   - jekyll-include-cache
 
 defaults:
-  # _posts
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       classes: wide
+      share: false
 
 repository: "automaticanalysis/automaticanalysis"

@@ -1,0 +1,17 @@
+Tibor Auer:
+  name        : "Tibor Auer"
+  bio         : "neuro-imaginer | m*aa*ster since 2013"
+  avatar      : "/assets/images/bio-photo-ta.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:tibor.auer@gmail.com"
+    - label: "GitHub"
+      icon: "fas fa-fw fa-github"
+      url: "https://www.linkedin.com/in/tibor-auer-4817571a4/"
+    - label: "LinkedIn"
+      icon: "fas fa-fw fa-linkedin-square"
+      url: "https://www.linkedin.com/in/tibor-auer-4817571a4/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/TiborAuer"

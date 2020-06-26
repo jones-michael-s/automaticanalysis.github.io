@@ -1,9 +1,15 @@
 main:
 - title: Home
   url: /
-- title: Concepts
-  url: /concepts/
-- title: News
-  url: /news/
 - title: About
   url: /about/
+- title: Getting started
+  url: /gettingstarted/
+- title: News
+  url: /news/
+
+gettingstarted:
+- title: "Requirements"
+  url: /gettingstarted/
+- title: "Installation"
+  url: /gettingstarted/
