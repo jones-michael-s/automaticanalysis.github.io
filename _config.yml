@@ -4,7 +4,7 @@ remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "sunrise"
 logo: "/assets/images/logo.png"
 title: automatic analysis
-subtitle: "a Matlab pipeline"
+subtitle: "a MATLAB pipeline"
 title_separator: "|"
 markdown: kramdown
 include: ["_pages"]
@@ -20,5 +20,16 @@ defaults:
       layout: single
       classes: wide
       share: false
+  # _news
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
 repository: "automaticanalysis/automaticanalysis"
