@@ -34,5 +34,11 @@ defaults:
       author_profile: false
       share: false
  
-
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+  
 repository: "automaticanalysis/automaticanalysis"
