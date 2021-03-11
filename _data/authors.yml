@@ -17,12 +17,12 @@ Tibor Auer:
       url: "https://twitter.com/TiborAuer"
 Ethan Knights:
   name        : "Ethan Knights"
-  bio         : "Multimodal data manager | aa-preciator"
+  bio         : "Multimodal data manager | *aa*-preciator"
   avatar      : "/assets/images/bio-photo-ek.png"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:ethan.knights"mrc-cbu.cam.ac.uk"
+      url: "mailto:ethan.knights@mrc-cbu.cam.ac.uk"
     - label: "GitHub"
       icon: "fas fa-fw fa-github"
       url: "https://github.com/ethanknights"
