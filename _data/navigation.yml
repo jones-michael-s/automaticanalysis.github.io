@@ -10,9 +10,11 @@ main:
 
 gettingstarted:
 - title: "Requirements"
-  url: /gettingstarted/
+  url: /gettingstarted/#2-requirements
 - title: "Installation"
-  url: /gettingstarted/
+  url: /gettingstarted/#3-download-and-installation
+- title: "Parameterset"
+  url: /gettingstarted/#3-parameterset
 
 news:
   - title: "By Year"
