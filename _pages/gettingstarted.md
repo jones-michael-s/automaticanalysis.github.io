@@ -19,6 +19,7 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 
 ### Minimum requirements ###
 Operating System: Linux or MacOX (Windows is not supported. Sorry!)
+
 Softwares:
   - MATLAB - It has been tested with version r2013a and later
   - SPM - It has been tested with versions SPM12 r7487 or later
