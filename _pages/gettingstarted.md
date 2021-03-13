@@ -21,8 +21,22 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 Operating System: Linux or MacOX (Windows is not supported. Sorry!)
 
 Softwares:
-  - MATLAB - It has been tested with version r2013a and later
-  - SPM - It has been tested with versions SPM12 r7487 or later
+  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It has been tested with version r2013a and later
+  - [SPM](https://www.fil.ion.ucl.ac.uk/spm) - It has been tested with versions SPM12 r7487 or later
+Optional:
+  - [GraphViz](http://www.graphviz.org) for visual representation of the pipeline
+
+### Further supported software and toolboxes ###
+  - [FMRIB Software Library](http://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
+  - [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki)
+  - [EEGLab](https://github.com/sccn/eeglab)
+  - [FieldTrip](https://www.fieldtriptoolbox.org)
+  - [Face Masking](https://nrg.wustl.edu/software/face-masking)
+  - [Group ICA Of fMRI Toolbox](http://mialab.mrn.org/software/gift/index.html)
+  - [BrainWavelet Toolbox](http://www.brainwavelet.org)
+  - [Motion FingerPrint](https://www.medizin.uni-tuebingen.de/kinder/en/research/neuroimaging/software)
+  - [CoSMoMVPA](http://www.cosmomvpa.org)
+  - [The Decoding Toolbox](https://sites.google.com/site/tdtdecodingtoolbox)
 
 ## 3. Download and installation ##
 
@@ -64,4 +78,4 @@ The parameterset specific for the Univeristy of Surrey ([aap_parameters_defaults
 
 Here, most of the settings are imported from aap_parameters_defaults.xml and the site-specific settings are redefined in the <local/> section.
 
-It is also possible, of course, to generate a parameterset based on [aap_parameters_defaults_UoS.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults_UoS.xml) if you want to keep all site-specific customisations. For that, you only have to replace "aap_parameters_defaults.xml" with "aap_parameters_defaults_UoS.xml" in the `xi:include` tag. 
+It is also possible, of course, to generate a parameterset based on [aap_parameters_defaults_UoS.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults_UoS.xml) (or any other derived parameterset) if you want to keep customisations. For that, you only have to replace "aap_parameters_defaults.xml" with "aap_parameters_defaults_UoS.xml" in the `xi:include` tag. 
