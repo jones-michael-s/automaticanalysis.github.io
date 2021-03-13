@@ -12,7 +12,7 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 ## 1. Registration ##
 
 {% raw %}
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScubzIQsKp472C2RsnKTZx76rTv0Y51_gAd63FUhfhWnDMczg/viewform?embedded=true" width="640" height="1206" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScubzIQsKp472C2RsnKTZx76rTv0Y51_gAd63FUhfhWnDMczg/viewform?embedded=true" width="640" height="1600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 {% endraw %}
 
 ## 2. Requirements ##
