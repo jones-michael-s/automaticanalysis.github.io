@@ -40,4 +40,28 @@ As an alternative to git, you can simply download a [zip archive of the current 
 
 ## 4. Parameterset ##
 
-Automatic Analysis MUST to be configured before its first use. Rather than adding tools, such as EEGLAB or FieldTrip to the path, you MUST specify them in a parameterset, which serves as a description of the computational environment. You can see example parametersets in the [repository](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets) and locally in the <aa path>/aa_parametersets folder. The idea is that every site (or even user and project) can specify its own parameterset, which contains how the data and the software tools including the job scheduler are organised locally.
+Automatic Analysis must to be configured before its first use. Rather than adding tools, such as EEGLAB or FieldTrip to the path, you must specify them in a parameterset, which serves as a description of the computational environment. You can see example parametersets in the [repository](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets) and locally in the `<aa path>/aa_parametersets` folder. The idea is that every site (or even user and project) can specify its own parameterset, which contains how the data and the software tools including the job scheduler are organised locally.
+
+### 4.1 Inheritance ###
+
+A parameterset can inherit the parameters using [XML Inclusion](http://www.w3.org/TR/xinclude) from another one while overriding a few of them. In this way, you do not have to (re)define every paremeters but only those which are different from those in the other paremeterset. For example, you can create a site/user/study-specific parameterset based on [aap_parameters_defaults.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults.xml), which is the root parameterset describing every paremeters.
+
+The parameterset specific for the Univeristy of Surrey ([aap_parameters_defaults_UoS.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults_UoS.xml)) can be taken as an example:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<aap xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="aap_parameters_defaults.xml" parse="xml"/>
+  <local>
+    <directory_conventions>
+    …
+    </directory_conventions>
+    <options>
+    …
+    </options>
+  </local>
+</aap>
+```  
+
+Here, most of the settings are imported from aap_parameters_defaults.xml and the site-specific settings are redefined in the <local/> section.
+
+It is also possible, of course, to generate a parameterset based on [aap_parameters_defaults_UoS.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults_UoS.xml) if you want to keep all site-specific customisations. For that, you only have to replace "aap_parameters_defaults.xml" with "aap_parameters_defaults_UoS.xml" in the `xi:include` tag. 
