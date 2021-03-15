@@ -21,9 +21,11 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 Operating System: Linux or MacOX (Windows is not supported. Sorry!)
 
 Softwares:
-  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It has been tested with version r2013a and later
+  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It has been tested with version r2013a and later.
   - [SPM](https://www.fil.ion.ucl.ac.uk/spm) - It has been tested with versions SPM12 r7487 or later
 Optional:
+  - To utilize the full power of _aa_, it needs to have access to a cluster with one of the supported job schedulers (i.e. Torque, SLURM, LSF, SoGE). This cluster has to be already configured in MATLAB by creating a valid corresponding [Cluster Profile](https://uk.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html).
+  - To allow _aa_ for sending email notification about the current workflow execution(s), you need to specify an email account and password. It is strongly recommended to use an account dedicated only for this purpose, because the password must be specified as an unencrypted text, which is highly unsecure. This functionality has been tested on GMail accounts only. 
   - [GraphViz](http://www.graphviz.org) for visual representation of the pipeline
 
 ### 2.2. Further supported software and toolboxes ###
@@ -40,15 +42,15 @@ Optional:
 
 ## 3. Download and installation ##
 
-There are two ways to install the aa scripts: One using Git, the other simply downloading the files.
+There are two ways to install the _aa_ scripts: One using Git, the other simply downloading the files.
 
-If you are new to Git, there is a bit of a learning curve, but it is probably worth it. Using Git will make it easier to update code, especially small improvements and bug fixes. Because aa is still under active development these can happen a lot! There is some introductory help on github and also a git book, both of which are good resources.
+If you are new to Git, there is a bit of a learning curve, but it is probably worth it. Using Git will make it easier to update code, especially small improvements and bug fixes. Because _aa_ is still under active development these can happen a lot! There is some introductory help on github and also a git book, both of which are good resources.
 
-Once you have installed Git, you can get aa by cloning the repository on your local drive:
+Once you have installed Git, you can get _aa_ by cloning the repository on your local drive:
 
 `$ git clone https://github.com/automaticanalysis/automaticanalysis.git`
 
-This will give you an automaticanalysis directory containing the aa code in the current folder.
+This will give you an automaticanalysis directory containing the _aa_ code in the current folder.
 
 As an alternative to git, you can simply download a [zip archive of the current code](https://github.com/automaticanalysis/automaticanalysis/archive/master.zip). Navigate to the main automatic analysis page (https://github.com/automaticanalysis/automaticanalysis) and click "download ZIP".
 
@@ -101,7 +103,19 @@ Here we provide a list of the most important settings to be configured:
 
 #### 4.2.3. Optional ####
 
-There are also other settings which may be required depending on your use case:
+There are also other settings which may be required depending on your preference
+  - Parallel execution requires access to a cluster with one of the supported job schedulers (i.e. Torque, SLURM, LSF, SoGE), a valid corresponding [Cluster Profile](https://uk.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html), and its specification in the parameterset. You can also specify a required queue or resource other than memory and walltime by adding the corresponding submit argument (i.e. as it would be specified in the system's command-line) after the Cluster Profile and separated with colon. If this settings is empty, the parallel execution will not be available. You can also use the pre-defined `'local'` profile.
+  ```xml
+      <directory_conventions>
+        <poolprofile> <!-- Cluster Profile and (optional) submit argument separated with colon. -->
+  ```
+  - Email notification requires specification of an email account (email addres) and password (unencrypted text!) separated with colon.
+  ```xml
+      <directory_conventions>
+        <mailerserver> <!-- E-mail address and password (colon-sepertated). -->
+  ```
+
+and use case.
   - Distortion correction using fieldmaps
   ```xml
       <directory_conventions>
@@ -113,7 +127,7 @@ There are also other settings which may be required depending on your use case:
         <protocol_t2> <!-- For automatic identification of T2-weighted images, you must sepcify the name of the T2-weighted protocol as stored in the DICOM header -->
   ```
 #### 4.2.4. Further software ####
-aa integrates several softare and toolboxes. [Here](#further-supported-software-and-toolboxes) you can find their correspponding links to read more about them.
+_aa_ integrates several softare and toolboxes. [Here](#further-supported-software-and-toolboxes) you can find their correspponding links to read more about them.
   - Some software are integrated using specific interface found in `<aa path>/aa_tools/toolboxes` folder.
     (**For developers**: Please, keep in mind that this is the preferred way of integrating further software!)
   ```xml
