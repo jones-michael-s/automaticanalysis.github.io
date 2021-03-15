@@ -17,7 +17,7 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 
 ## 2. Requirements ##
 
-### Minimum requirements ###
+### 2.1. Minimum requirements ###
 Operating System: Linux or MacOX (Windows is not supported. Sorry!)
 
 Softwares:
@@ -26,7 +26,7 @@ Softwares:
 Optional:
   - [GraphViz](http://www.graphviz.org) for visual representation of the pipeline
 
-### Further supported software and toolboxes ###
+### 2.2. Further supported software and toolboxes ###
   - [FMRIB Software Library](http://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
   - [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/fswiki)
   - [EEGLab](https://github.com/sccn/eeglab)
@@ -56,7 +56,7 @@ As an alternative to git, you can simply download a [zip archive of the current 
 
 Automatic Analysis must to be configured before its first use. Rather than adding tools, such as EEGLAB or FieldTrip to the path, you must specify them in a parameterset, which serves as a description of the computational environment. You can see example parametersets in the [repository](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets) and locally in the `<aa path>/aa_parametersets` folder. The idea is that every site (or even user and project) can specify its own parameterset, which contains how the data and the software tools including the job scheduler are organised locally.
 
-### 4.1 Inheritance ###
+### 4.1. Inheritance ###
 
 A parameterset can inherit the parameters using [XML Inclusion](http://www.w3.org/TR/xinclude) from another one while overriding a few of them. In this way, you do not have to (re)define every paremeters but only those which are different from those in the other paremeterset. For example, you can create a site/user/study-specific parameterset based on [aap_parameters_defaults.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults.xml), which is the root parameterset describing every paremeters.
 
@@ -80,9 +80,9 @@ Here, most of the settings are imported from aap_parameters_defaults.xml and the
 
 It is also possible, of course, to generate a parameterset based on [aap_parameters_defaults_UoS.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults_UoS.xml) (or any other derived parameterset) if you want to keep customisations. For that, you only have to replace "aap_parameters_defaults.xml" with "aap_parameters_defaults_UoS.xml" in the `xi:include` tag. 
 
-### 4.2 Configuration ###
+### 4.2. Configuration ###
 
-#### 4.2.1 Mandatory ####
+#### 4.2.2. Mandatory ####
 
 Here we provide a list of the most important settings to be configured:
 ```xml
@@ -97,43 +97,82 @@ Here we provide a list of the most important settings to be configured:
       <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
         <name>spm</name> 
         <dir> <!-- path to SPM -->
-      </toolbox>
 ```
 
-#### 4.2.2 Optional ####
+#### 4.2.3. Optional ####
 
 There are also other settings which may be required depending on your use case:
   - Distortion correction using fieldmaps
-```xml
-    <directory_conventions>
-      <protocol_fieldmap> <!-- For automatic identification of fieldmap, you must sepcify the name of the fieldmap protocol as stored in the DICOM header -->
-```
+  ```xml
+      <directory_conventions>
+        <protocol_fieldmap> <!-- For automatic identification of fieldmap, you must sepcify the name of the fieldmap protocol as stored in the DICOM header -->
+  ```
   - Multichannel segmentation using T2-weighted images
-```xml
-    <directory_conventions>
-      <protocol_t2> <!-- For automatic identification of T2-weighted images, you must sepcify the name of the T2-weighted protocol as stored in the DICOM header -->
-```
-  - Further software
-Some software are integrated using specific interface found in `<aa path>/aa_tools/toolboxes` folder.
-```xml
-    <directory_conventions>
-      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
-        <name>eeglab</name> 
-        <dir> <!-- path to EEGLAB -->
-        <extraparameters>
-          <requiredPlugins> <!-- colon-separated list of plugins to be used -->
+  ```xml
+      <directory_conventions>
+        <protocol_t2> <!-- For automatic identification of T2-weighted images, you must sepcify the name of the T2-weighted protocol as stored in the DICOM header -->
+  ```
+#### 4.2.4. Further software ####
+aa integrates several softare and toolboxes. [Here](#further-supported-software-and-toolboxes) you can find their correspponding links to read more about them.
+  - Some software are integrated using specific interface found in `<aa path>/aa_tools/toolboxes` folder.
+    (**For developers**: Please, keep in mind that this is the preferred way of integrating further software!)
+  ```xml
+      <directory_conventions>
+        <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+          <name>eeglab</name> 
+          <dir> <!-- path to EEGLAB -->
+          <extraparameters>
+            <requiredPlugins> <!-- colon-separated list of plugins to be used -->
 
-      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
-        <name>fieldtrip</name> 
-        <dir> <!-- path to FieldTrip -->
+        <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+          <name>fieldtrip</name> 
+          <dir> <!-- path to FieldTrip -->
 
-      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
-        <name>hcpwb</name> 
-        <dir> <!-- path to Human Connectome Project Workbench (used by M/EEG source reconstruction based on cortical sheet) -->
-        <extraparameters>
-          <templateDir> <!-- Path to the folder created as spefcified in [FieldTrip path]/bin/ft_postfreesurferscript.sh -->
+        <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+          <name>hcpwb</name> 
+          <dir> <!-- path to Human Connectome Project Workbench (used by M/EEG source reconstruction based on cortical sheet) -->
+          <extraparameters>
+            <templateDir> <!-- Path to the folder created as spefcified in [FieldTrip path]/bin/ft_postfreesurferscript.sh -->
 
-      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
-        <name>mvpalight</name> 
-        <dir> <!-- path to SPM -->
-```
+        <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+          <name>mvpalight</name> 
+          <dir> <!-- path to SPM -->
+  ```
+  - FSL and FreeSurfer can be also configured within the parameterset - each wist a specific set of parameters
+    - FSL
+    ```xml
+        <directory_conventions>
+          <fsldir> <!-- Path to FSL -->
+          <fslshell> <!-- Shell used to run FSL -->
+          <fslsetup> <!-- Path to a setup script to be executed before any FSL command. This script usually invoke [FSL path]/etc/fslconf/fsl.sh -->
+          <fsloutputtype> <!-- Type of images generated by FSL You can read more about it at https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslEnvironmentVariables. -->
+    ```
+    - FreeSurfer
+    ```xml
+        <directory_conventions>
+          <freesurferdir> <!-- Path to FreeSurfer -->
+          <freesurfershell> <!-- (optional) Path to a setup script to be executed before any FreeSurfer command. -->
+          <freesurfersetup> <!-- Shell used to run FreeSurfers -->
+          <freesurferenvironment> <!-- Path to the FreeSurfer environmental setup script (ended with a semicolon). It usually points to [FreeSurfer path]/FreeSurferEnv.sh -->
+    ```
+  - Certain toolboxes have dedicated fields within the parameterset. 
+  ```xml
+      <directory_conventions>
+        <ANTSdir> <!-- Path to Advanced Normalisation Tools -->
+        <BrainWaveletdir> <!-- Path to BrainWavelet -->
+        <DCMTKdir> <!-- Path to DICOM Toolkit -->
+        <FaceMaskingdir> <!-- Path to FaceMasking -->
+        <GIFTdir> <!-- Path to Group ICA Of fMRI Toolbox -->
+  ```
+  - Folders containing further MATLAB-based toolboxes and codes you want to add to the path can be added as a list of paths. These folders will be added to the MATLAB path without further processing.
+  ```xml
+      <directory_conventions>
+        <matlabtoolsdir> <!-- Colon-separated list of path -->
+  ```
+
+## 5. Testing ###
+The example user scripts and task lists in the `<aa path>examples` folder demonstrate a wide range of analyses. We recommend that you try to run a few these scripts to confirm that your installation is running (e.g., aa_user_demo.m).
+
+We provide rudimentary automated tests under the `<aa path>aa_test` folder, which also uses these examples. If you are having trouble with _aa_ it's a good idea to start by checking that you can get the automated test to run.
+
+Finally, it is easier to get started with _aa_ by adapting the example that most resembles your planned analysis.
