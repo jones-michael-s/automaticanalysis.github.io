@@ -23,6 +23,7 @@ Operating System: Linux or MacOX (Windows is not supported. Sorry!)
 Softwares:
   - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It has been tested with version r2013a and later.
   - [SPM](https://www.fil.ion.ucl.ac.uk/spm) - It has been tested with versions SPM12 r7487 or later
+
 Optional:
   - To utilize the full power of _aa_, it needs to have access to a cluster with one of the supported job schedulers (i.e. Torque, SLURM, LSF, SoGE). This cluster has to be already configured in MATLAB by creating a valid corresponding [Cluster Profile](https://uk.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html).
   - To allow _aa_ for sending email notification about the current workflow execution(s), you need to specify an email account and password. It is strongly recommended to use an account dedicated only for this purpose, because the password must be specified as an unencrypted text, which is highly unsecure. This functionality has been tested on GMail accounts only. 
