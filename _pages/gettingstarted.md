@@ -79,3 +79,61 @@ The parameterset specific for the Univeristy of Surrey ([aap_parameters_defaults
 Here, most of the settings are imported from aap_parameters_defaults.xml and the site-specific settings are redefined in the <local/> section.
 
 It is also possible, of course, to generate a parameterset based on [aap_parameters_defaults_UoS.xml](https://github.com/automaticanalysis/automaticanalysis/blob/master/aa_parametersets/aap_parameters_defaults_UoS.xml) (or any other derived parameterset) if you want to keep customisations. For that, you only have to replace "aap_parameters_defaults.xml" with "aap_parameters_defaults_UoS.xml" in the `xi:include` tag. 
+
+### 4.2 Configuration ###
+
+#### 4.2.1 Mandatory ####
+
+Here we provide a list of the most important settings to be configured:
+```xml
+    <directory_conventions>
+      <rawdatadir> <!-- Colon-separated list of directories to find raw MRI data. You MUST have an entry ending with "aa_demo" for the examples -->
+      <rawmeegdatadir> <!-- Colon-separated list of directories to find raw M/EEG data. You MUST have an entry ending with "aa_demo" for the examples -->
+      <subjectoutputformat> <!-- `sprintf` formatting string to get subject directory as stored in rawdatadir -->
+      <meegsubjectoutputformat> <!-- `sprintf` formatting string to get subject directory as stored in rawmeegdatadir -->
+      <seriesoutputformat> <!-- `sprintf` formatting string to get series directory as stored in subject directory -->
+      <protocol_structural> <!-- For automatic identification of structural/anatomical data, you must sepcify the name of the structural/anatomical protocol as stored in the DICOM header -->
+      <dicomfilter> <!-- Directory listing filter to find DICOM files -->
+      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+        <name>spm</name> 
+        <dir> <!-- path to SPM -->
+      </toolbox>
+```
+
+#### 4.2.2 Optional ####
+
+There are also other settings which may be required depending on your use case:
+  - Distortion correction using fieldmaps
+```xml
+    <directory_conventions>
+      <protocol_fieldmap> <!-- For automatic identification of fieldmap, you must sepcify the name of the fieldmap protocol as stored in the DICOM header -->
+```
+  - Multichannel segmentation using T2-weighted images
+```xml
+    <directory_conventions>
+      <protocol_t2> <!-- For automatic identification of T2-weighted images, you must sepcify the name of the T2-weighted protocol as stored in the DICOM header -->
+```
+  - Further software
+Some software are integrated using specific interface found in `<aa path>/aa_tools/toolboxes` folder.
+```xml
+    <directory_conventions>
+      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+        <name>eeglab</name> 
+        <dir> <!-- path to EEGLAB -->
+        <extraparameters>
+          <requiredPlugins> <!-- colon-separated list of plugins to be used -->
+
+      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+        <name>fieldtrip</name> 
+        <dir> <!-- path to FieldTrip -->
+
+      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+        <name>hcpwb</name> 
+        <dir> <!-- path to Human Connectome Project Workbench (used by M/EEG source reconstruction based on cortical sheet) -->
+        <extraparameters>
+          <templateDir> <!-- Path to the folder created as spefcified in [FieldTrip path]/bin/ft_postfreesurferscript.sh -->
+
+      <toolbox> <!-- Settings for SPM. N.B.: You should not modify SPM version in your user script but rather in your parameterset. -->
+        <name>mvpalight</name> 
+        <dir> <!-- path to SPM -->
+```
