@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "github-pages", "~> 213"
+gem "github-pages", "~> 214"
 
 gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
 
