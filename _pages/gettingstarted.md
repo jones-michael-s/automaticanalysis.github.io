@@ -21,7 +21,7 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 Operating System: Linux or MacOX (Windows is not supported. Sorry!)
 
 Softwares:
-  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It has been tested with version r2013a and later.
+  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It requires version r2013b and later.
   - [SPM](https://www.fil.ion.ucl.ac.uk/spm) - It has been tested with versions SPM12 r7487 or later
 
 Optional:
