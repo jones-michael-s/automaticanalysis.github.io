@@ -128,7 +128,8 @@ and use case.
         <protocol_t2> <!-- For automatic identification of T2-weighted images, you must sepcify the name of the T2-weighted protocol as stored in the DICOM header -->
   ```
 #### 4.2.4. Further software ####
-_aa_ integrates several softare and toolboxes. [Here](#further-supported-software-and-toolboxes) you can find their correspponding links to read more about them.
+
+_aa_ integrates several softare and toolboxes. [Here](#22-further-supported-software-and-toolboxes) you can find their correspponding links to read more about them.
   - Some software are integrated using specific interface found in `<aa path>/aa_tools/toolboxes` folder.
     (**For developers**: Please, keep in mind that this is the preferred way of integrating further software!)
   ```xml
