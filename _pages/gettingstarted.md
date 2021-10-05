@@ -21,8 +21,8 @@ This page is under construction. The [**old wiki**](https://github.com/automatic
 Operating System: Linux or MacOX (Windows is not supported. Sorry!)
 
 Softwares:
-  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - It requires version r2013b and later.
-  - [SPM](https://www.fil.ion.ucl.ac.uk/spm) - It has been tested with versions SPM12 r7487 or later
+  - [MATLAB](https://uk.mathworks.com/products/matlab.html) - *aa* requires version **R2016b** and later.
+  - [SPM](https://www.fil.ion.ucl.ac.uk/spm) - *aa* has been tested with versions SPM12 r7487 or later
 
 Optional:
   - To utilize the full power of _aa_, it needs to have access to a cluster with one of the supported job schedulers (i.e. Torque, SLURM, LSF, SoGE). This cluster has to be already configured in MATLAB by creating a valid corresponding [Cluster Profile](https://uk.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html).
