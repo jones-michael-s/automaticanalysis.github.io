@@ -284,6 +284,7 @@ DEPENDENCIES
   github-pages (~> 214)
   jekyll-include-cache
   jekyll-remote-theme
+  nokogiri (>= 1.12.5)
   wdm (~> 0.1.1)
   webrick (~> 1.7)
 
