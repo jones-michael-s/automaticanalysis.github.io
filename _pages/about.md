@@ -8,6 +8,13 @@ automatic analysis software was originally developed by Dr Rhodri Cusack for sup
 
 ## Core concepts ##
 
+### Tight integration of foundation tools
+"automatic" also means automatic management of external tools, which 
+- handles external codebase with flexibility and transparently
+- reduces conflict between external tools
+- requires minimum input from the user
+
+This concept is implemented via the [toolbox framework]({% link ../toolboxes.md %})
 
 ## Developers ##
 
