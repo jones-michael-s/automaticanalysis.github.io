@@ -14,7 +14,7 @@ automatic analysis software was originally developed by Dr Rhodri Cusack for sup
 - reduces conflict between external tools
 - requires minimum input from the user
 
-This concept is implemented via the [toolbox framework]({% link ../toolboxes.md %})
+This concept is implemented via the [toolbox framework]({% link _pages/toolboxes.md %})
 
 ## Developers ##
 
