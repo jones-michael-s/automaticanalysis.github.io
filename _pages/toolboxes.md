@@ -93,6 +93,29 @@ The corresponding module manages the tool via the interface. The minimum managem
         TDT.unload;
 ```
 
+If a module uses more than one toolbox, it is recommended to unload the temporarly redundant toolbox(es) to avoid path shadowing, i.e. when two functions exist with the same name in the path. Unload toolbox can be later reloaded, if needed (example from `aamod_meeg_timefrequencyanalysis`)
+```matlab
+        [~, FT] = aas_cache_get(aap,'fieldtrip');
+        FT.load;
+        ...
+                        case 'eeglab'
+                            FT.unload;
+                            if seg == 1
+                                [~, EL] = aas_cache_get(aap,'eeglab');
+                                EL.load;
+                            else
+                                EL.reload;
+                            end
+                            EEG = pop_loadset('filepath',spm_file(meegfn{seg},'path'),'filename',spm_file(meegfn{seg},'filename'));
+                            if isempty(EEG.epoch)
+                                aas_log(aap,false,sprintf('WARNING: segment # %d has no trial --> skipped',seg));
+                                continue; 
+                            end
+                            EL.unload;
+                            FT.reload;                            
+                            data(seg) = ft_struct2single(eeglab2fieldtripER(EEG,'reorient',1));
+```
+
 ### Parameterset
 
 The site-specific parameterset contains a corresponding toolbox entry for the tool. The mimumum entry includes toolbox name and path. Multiple entries can be added right after each other. The order does not matter.
@@ -120,3 +143,11 @@ For example ([aap_parameters_defaults_UoS](https://github.com/automaticanalysis/
 ```
 
 ## Optional extras
+
+### Loading a tool before _aa_init_
+
+### Tool workspace
+
+### Sub-toolbox and collection
+
+## Tool-specific extras
