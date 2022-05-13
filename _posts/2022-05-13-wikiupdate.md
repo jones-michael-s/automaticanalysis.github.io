@@ -11,4 +11,4 @@ tags:
 
 The [**aa wiki**](https://github.com/automaticanalysis/automaticanalysis/wiki) has been recently revamped!
 
-The documentation now includes a tutorial introduction, Frequency Asked Questions, a module developers guide, and much more.
+The documentation now includes a tutorial introduction, an FAQ, a module development guide, and more.
