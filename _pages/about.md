@@ -14,13 +14,11 @@ automatic analysis software was originally developed by Dr Rhodri Cusack for sup
 - reduces conflict between external tools
 - requires minimum input from the user
 
-This concept is implemented via the [toolbox framework]({% link _pages/toolboxes.md %})
-
-## Developers ##
-
+See the [aa wiki](https://github.com/automaticanalysis/automaticanalysis/wiki) for more information.
 
 ## References and citation ##
 For any papers that report data analyzed with aa, please include the [GitHub repo URL](https://github.com/automaticanalysis/automaticanalysis) and cite the aa paper:
 
 Cusack R, Vicente-Grabovetsky A, Mitchell DJ, Wild CJ, Auer T, Linke AC, Peelle JE (2015) Automatic analysis (aa): Efficient neuroimaging workflows and parallel processing using Matlab and XML. Frontiers in Neuroinformatics 8:90. DOI:[10.3389/fninf.2014.00090](http://doi.org/10.3389/fninf.2014.00090)
 {:.reference}
+
