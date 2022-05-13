@@ -3,18 +3,8 @@ main:
   url: /
 - title: About
   url: /about/
-- title: Getting started
-  url: /gettingstarted/
 - title: News
   url: /news/
-
-gettingstarted:
-- title: "Requirements"
-  url: /gettingstarted/#2-requirements
-- title: "Installation"
-  url: /gettingstarted/#3-download-and-installation
-- title: "Parameterset"
-  url: /gettingstarted/#4-parameterset
 
 news:
   - title: "By Year"
